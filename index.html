@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <!--<script data-require="angular.js@1.2.15" data-semver="1.2.15" src="https://code.angularjs.org/1.2.15/angular.js"></script>-->
+      <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular-animate.min.js"></script>-->
+      <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-animate.min.js"></script>-->
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+    <!--<link rel="stylesheet" href="style.css" />-->
+    <script src="isteven-multi-select-4.0.0.js"></script>
+    <link href="isteven-multi-select-4.0.0.css" rel="stylesheet">
+    <script src="script.js"></script>
+  
+  </head>
+
+  <body>
+    <div>
+      <div ng-controller="myController">
+        <!-- <div ng-repeat="item in myArray">
+          <span ng-bind="item.name"></span>
+        </div> -->
+        <!-- <span>Two dropdowns but one output model works</span> -->
+        <!-- <div    isteven-multi-select
+                input-model="myArray"
+                output-model="newArray"
+                button-label="icon name"
+                item-label="icon name maker"
+                tick-property="ticked"
+        > -->
+        <!-- <div    isteven-multi-select
+        input-model="countryList"
+        output-model="newArray"
+        button-label="icon name"
+        item-label="icon name maker"
+        tick-property="ticked"
+        >
+        </div> -->
+         <div    isteven-multi-select
+        input-model="statesList"
+        output-model="statesNewArray"
+        button-label="icon name"
+        item-label="icon name maker"
+        on-item-click="generateArray1(false)"
+        tick-property="ticked"     
+        on-select-all="generateArray1(true)"
+        on-select-none="emptyArray()"
+        on-reset="emptyArray()"
+        > 
+        
+        <!-- <div    isteven-multi-select
+                input-model="myArray2"
+                output-model="newArray2"
+                button-label="icon name"
+                item-label="icon name maker"
+                tick-property="ticked"
+                on-item-click="generateArray()"
+                 on-select-all="generateArray()"
+        on-select-none="emptyArray()"
+        >   -->
+        </div>
+        
+        <div    isteven-multi-select
+        input-model="finalStatesArray"
+        output-model="states1"
+        button-label="icon name"
+        item-label="icon name maker"
+        tick-property="ticked"
+        is-disabled="checkIfEmpty()"
+        >
+        </div>
+      
+        <!-- <pre ng-bind="newArray |json"></pre>-->
+        <pre ng-bind="statesNewArray |json"></pre>
+        <!-- <pre ng-bind="states1 |json"></pre>  -->
+         <pre ng-bind="finalStatesArray |json"></pre>
+       <!-- <pre ng-bind="newArray3 |json"></pre> -->
+        
+        <!-- <span>two dropdowns but using an ng-repeat does not work</span>
+        <div ng-repeat="group in groupArray">
+          <div  isteven-multi-select
+                input-model="group.suites"
+                output-model="newArray3.blah"
+                button-label="icon name"
+                item-label="icon name maker"
+                tick-property="ticked"
+          >
+          </div>
+        </div> -->
+      </div>
+    </div>
+  </body>
+
+</html>
